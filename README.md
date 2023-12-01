@@ -2,9 +2,9 @@
 # API DEVELOPED:
 - FRONTEND : ANGULAR
 - DATABASE: FIREBASE
-- STYLES:ANGULAR MATERIAL,CSS AND BOOTSTRAP
-- API:https://www.themoviedb.org/?language=es
-- 
+- STYLES: ANGULAR MATERIAL,CSS AND BOOTSTRAP
+- API: https://www.themoviedb.org/?language=es
+  
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
 ## Development server
