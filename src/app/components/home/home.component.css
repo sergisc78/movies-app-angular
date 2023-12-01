@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+h1{
+  margin-top: 220px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+}
+h4{
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+}
+h5{
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 30px;
+  color: black;
+}
+nav{
+  height: 80px;
+  background-image: url('../../../assets/movies-wallpaper-2.jpg');
+}
+.navbar-brand{
+  font-size: 50px;
+  color: black;
+}
+.introduction{
+  margin-top: 100px;
+}
+.card{
+ background-image: url('../../../assets/cinema.jpeg');
+}
+.container{
+  display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .container{
+    display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+  }
+}

@@ -1,0 +1,36 @@
+<mat-card class="card me-3 mb-3 " style="height: 900px;">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image "></div>
+    <div class="title-rating text-center">
+
+      <!--TÍTOL PEL-LÍCULA-->
+      <mat-card-title class="title">{{movie.original_title}}</mat-card-title>
+
+      <!--SI LA PEL-LÍCULA TÉ UNA PUNTUACIÓ SUPERIOR A 5, PILL => SUCCESS SINO PILL => ANGER-->
+      <div *ngIf="movie.vote_average > 5">
+        <mat-card-subtitle class="rating">Rating :
+          <span class="badge rounded-pill text-bg-primary"> {{movie.vote_average}}</span>
+        </mat-card-subtitle>
+      </div>
+      <div *ngIf="movie.vote_average < 5 ">
+        <mat-card-subtitle class="rating">Rating :
+          <span class="badge rounded-pill text-bg-danger"> {{movie.vote_average}}</span>
+        </mat-card-subtitle>
+      </div>
+
+    </div>
+  </mat-card-header>
+
+  <!--SI LA PEL-LÍCULA TÉ POSTER, ES MOSTRA, SINO, IMAGE NOT FOUND-->
+  <img *ngIf="movie.poster_path" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'
+    [alt]='movie.original_title' width="100%">
+  <img *ngIf="!movie.poster_path" src="https://www.genesisglobalschool.edu.in/wp-content/uploads/2016/09/noimage.jpg"
+    width="100%">
+  <mat-card-content class="mt-2">
+    <p>
+      <!--RESUM PEL-LÍCULA-->
+      {{movie.overview}}
+    </p>
+  </mat-card-content>
+
+</mat-card>

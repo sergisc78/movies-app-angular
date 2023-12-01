@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+
+
+      <div *ngIf="!loading" class="login" style="color:black">
+        <img src="../../../assets/icons/login.png" alt="login-icon" width="40%" />
+        <h1 class="mt-2">Login</h1>
+        <form (ngSubmit)="login()" [formGroup]="loginUser">
+        <mat-form-field class="ample">
+          <mat-label class="input-form">Email</mat-label>
+          <input matInput autocomplete="off" formControlName="email" />
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')" class=" required-input mb-3">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        
+        
+        <mat-form-field class="ample mt-2">
+          <mat-label  class="input-form">Password</mat-label>
+          <input matInput autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="password" />
+          <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+            Please enter a password
+          </mat-error>
+          <mat-error *ngIf="passwordFormControl.hasError('required')" class=" required-input mb-3">
+            Password is <strong>required</strong>
+          </mat-error>
+          
+        </mat-form-field>
+        <br />
+        <button mat-raised-button color="primary" class="ample button mt-3" type="submit">
+          Login
+        </button>
+        <div class="register-forgot">
+          <h4 class="register-forgot">Don't you have an account? <a routerLink="/register" class="register-forgot">Register</a></h4>
+          <a routerLink="/forgot-password" class="register-forgot">Forgot your password?</a>
+          <br>
+          <a class="btn btn-outline-primary mt-3" (click)="loginGoogle()" style="width: 250px;">Login with google <img src="../../../assets/icons/google.png" alt="Google-login" width="10%" class="ms-2"></a>
+        </div>
+      
+      </form>
+      </div>
+      <app-spinner *ngIf="loading"></app-spinner>
+    </div>
+    
+    
+        </div>
+     </div>
+ 
+  

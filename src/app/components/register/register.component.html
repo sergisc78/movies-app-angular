@@ -1,0 +1,50 @@
+<div  class="container">
+
+  <div class="card">
+    <div class="card-body">
+  <div *ngIf="!loading" class="register">
+    <img src="../../../assets/icons/singup.png" alt="login-icon" width="40%" />
+    <h1 class="mt-2">Register</h1>
+    <form (ngSubmit)="register()" [formGroup]="registerUser">
+      <mat-form-field class="ample">
+        <mat-label class="input-form">Email</mat-label>
+        <input matInput autocomplete="off" formControlName="email" />
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')" class=" required-input mb-3">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="ample mt-2">
+        <mat-label  class="input-form">Password</mat-label>
+        <input matInput autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="password" />
+        <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+          Please enter a password
+        </mat-error>
+        <mat-error *ngIf="passwordFormControl.hasError('required')" class=" required-input mb-3">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="ample">
+        <mat-label  class="input-form"> Confirm Password</mat-label>
+        <input matInput autocomplete="off" [type]="hide ? 'password' : 'text'" formControlName="confirmPassword" />
+        <mat-error *ngIf="confirmPasswordFormControl.hasError('password') && !confirmPasswordFormControl.hasError('required')">
+          Please enter a password
+        </mat-error>
+        <mat-error *ngIf="confirmPasswordFormControl.hasError('required')" class=" required-input mb-3">
+          Confirm Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="primary" class="ample button mt-3" type="submit">
+        Sing Up
+      </button>
+      <h4 class="already-account">Do you have already an account? <a routerLink="/login"
+          class="already-account">Login</a></h4>
+    </form>
+  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>
+</div>
+</div>

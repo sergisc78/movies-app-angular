@@ -1,0 +1,19 @@
+
+.card {
+  max-width: 400px;
+  
+}
+.header-image {
+  background-size: cover;
+}
+p{
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: justify;
+}
+.title,.rating{
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
